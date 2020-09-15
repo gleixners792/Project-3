@@ -44,17 +44,24 @@ d3.csv("../../Cleaned/wine_data.csv").then(function (data) {
         console.log(topSampleValues);
         console.log(topStringOTUIDS);
         console.log(topOTULabels);
-        var trace1 = {
-            y: topStringOTUIDS,
-            x: topSampleValues,
-            type: "bar",
-            orientation: "h",
-            text: topOTULabels
-        }
-        var layout1 = {title:"",
-        xaxis: { title: "Sample Values"}};
-        var graphData = [trace1];
-        Plotly.newPlot("bar", graphData, layout1)
+        // var trace1 = {
+        //     y: topStringOTUIDS,
+        //     x: topSampleValues,
+        //     type: "bar",
+        //     orientation: "h",
+        //     text: topOTULabels
+        // }
+        var graphData3 = [
+            {
+                domain:{x: [0,1], y: [0,1]},
+                value: metaData.wfreq,
+                title: {text: "Pies"},
+                type: "pie"
+                }];
+        // var layout1 = {title:"",
+        // xaxis: { title: "Sample Values"}};
+        // var graphData = [trace1];
+        // Plotly.newPlot("bar", graphData, layout1)
         
         allColors = randomColor(theRow.otu_ids.length)
         console.log(allColors);
@@ -88,23 +95,23 @@ d3.csv("../../Cleaned/wine_data.csv").then(function (data) {
         var graphData2 = [trace2];
         Plotly.newPlot('bubble', graphData2, layout);
 
-        var graphData3 = [
-            {
-                domain:{x: [0,1], y: [0,1]},
-                value: metaData.wfreq,
-                title: {text: "Scrubs per Week"},
-                type: "indicator",
-                mode: "gauge+number",
-                gauge: {
-                    type: 'pie',
-                    shape: "angular",
-                    'axis': {'range': [0, 10], 'tick0': 0, 'dtick': 1,
-                            'ticklen': 10, 'tickwidth': 5,'tickfont': {'size' : 20}},
-                }
-            }
-        ];
-        var layout3 = {width: 600, height: 500, margin: {t:0, b:0}};
-        Plotly.newPlot('gauge', graphData3, layout);
+        // var graphData3 = [
+        //     {
+        //         domain:{x: [0,1], y: [0,1]},
+        //         value: metaData.wfreq,
+        //         title: {text: "Scrubs per Week"},
+        //         type: "indicator",
+        //         mode: "gauge+number",
+        //         gauge: {
+        //             type: 'pie',
+        //             shape: "angular",
+        //             'axis': {'range': [0, 10], 'tick0': 0, 'dtick': 1,
+        //                     'ticklen': 10, 'tickwidth': 5,'tickfont': {'size' : 20}},
+        //         }
+        //     }
+        // ];
+        // var layout3 = {width: 600, height: 500, margin: {t:0, b:0}};
+        // Plotly.newPlot('gauge', graphData3, layout);
     }
 
 
@@ -134,3 +141,8 @@ function updateIDList(subjectIDs) {
         row.append("option").text(id);
     })
 }
+
+
+
+var canvasP = document.getElementById("pieChart");var ctxP = canvasP.getContext('2d');var myPieChart =newChart(ctxP,{   type:'pie',   data:{      labels:["Värde 1","Värde 2","Värde 3","Värde 4","Värde 5","Värde 6","Värde 7"],      datasets:[{         data:[1,5,10,20,50,70,50],         backgroundColor:["#64B5F6","#FFD54F","#2196F3","#FFC107","#1976D2","#FFA000","#0D47A1"],         hoverBackgroundColor:["#B2EBF2","#FFCCBC","#4DD0E1","#FF8A65","#00BCD4","#FF5722","#0097A7"]}]},   options:{      legend:{         display:true,         position:"right"}}});canvasP.onclick =function(e){var slice = myPieChart.getElementAtEvent(e);if(!slice.length)return;// return if not clicked on slicevar label = slice[0]._model.label;switch(label){// add case for each label/slicecase'Värde 5':         alert('clicked on slice 5');         window.open('www.example.com/foo');break;case'Värde 6':         alert('clicked on slice 6');         window.open('www.example.com/bar');break;// add rests ...}
+}<scriptsrc="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script><canvasid="pieChart"></canvas>
