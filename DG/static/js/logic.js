@@ -2,7 +2,7 @@ const bounds = L.LatLngBounds(L.LatLng(-90, -180), L.LatLng(90, 180))
 
 // Creating map object
 var map = L.map("map", {
-  center: [20, 20],
+  center: [30, 20],
     zoomSnap: .1,
     zoomDelta: .5,
     zoom: 2.5,
