@@ -1,3 +1,18 @@
+var trace1 = {
+  labels: ["beer", "wine", "martini", "margarita",
+      "ice tea", "rum & coke", "mai tai", "gin & tonic"],
+  values: [22.7, 17.1, 9.9, 8.7, 7.2, 6.1, 6.0, 4.6],
+  type: 'pie'
+};
+
+var data = [trace1];
+
+var layout = {
+  title: "'Bar' Chart",
+};
+
+Plotly.newPlot("plot", data, layout);
+
 
 // // Part 4 - Broken Pie Chart
 // var trace1 = {
@@ -14,24 +29,6 @@
 // };
 
 // Plotly.newPlot("plot", data, layout);
-
-
-// // Part 5 - Working Pie Chart
-var trace1 = {
-  labels: ["beer", "wine", "martini", "margarita",
-      "ice tea", "rum & coke", "mai tai", "gin & tonic"],
-  values: [22.7, 17.1, 9.9, 8.7, 7.2, 6.1, 6.0, 4.6],
-  type: 'pie'
-};
-
-var data = [trace1];
-
-var layout = {
-  title: "'Bar' Chart",
-};
-
-Plotly.newPlot("plot", data, layout);
-
 
 
 // var canvasP = document.getElementById("pieChart");

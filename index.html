@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Wine Rankings</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -14,43 +15,37 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 jumbotron text-center">
-        <h1>Wine Rankings</h1>
-        <p>Use the interactive charts below to explore our extensive wine list</p>
+        <h1>Serving the Best Wines</h1>
+        <p>Use the interactive charts below to explore the best wines. </p>
+        <p>For the users convenience, this database includes only wines ranked 90-100.</p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-2">
         <div class="well">
-          <h1>Name:</h1>
+          <h3>Name:</h3>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+          
+          <h3>Type:</h3>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+
+          <h3>Rating:</h3>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+
+          <h3>Origin:</h3>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+
+          <h3>Price:</h3>
           <select id="selDataset" onchange="optionChanged(this.value)"></select>
         </div>
+        
 
-        <div class="well">
-          <h1>Type:</h1>
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>
-        </div>
-
-        <div class="well">
-          <h1>Rating:</h1>
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>
-        </div>
-
-        <div class="well">
-          <h1>Origin:</h1>
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>
-        </div>
-
-        <div class="well">
-          <h1>Price:</h1>
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>
-        </div>
-
-        <div class="panel panel-primary">
+        <!-- <div class="panel panel-primary">
           <div class="panel-heading">
             <h3 class="panel-title">Demographic Info</h3>
           </div>
           <div id="sample-metadata" class="panel-body"></div>
-        </div>
+        </div> -->
       </div>
       <div class="col-md-5">
         <div id="bar"></div>
