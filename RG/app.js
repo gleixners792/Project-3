@@ -22,18 +22,18 @@ var chartGroup = svg.append("g")
 
 // Import Data
 d3.csv("wine_data.csv").then(function(wineData) {
-
+    // console.log(wineData)
     // Step 1: Parse Data/Cast as numbers
     // ==============================
     wineData.forEach(function(data) {
       data.points = +data.points;
       data.price = +data.price;
     });
-
+   
     // Step 2: Create scale functions
     // ==============================
     var xLinearScale = d3.scaleLinear()
-      .domain([40, d3.max(wineData, d => d.points)])
+      .domain([85, d3.max(wineData, d => d.points)])
       .range([0, width]);
 
     var yLinearScale = d3.scaleLinear()
@@ -62,9 +62,9 @@ d3.csv("wine_data.csv").then(function(wineData) {
     .append("circle")
     .attr("cx", d => xLinearScale(d.points))
     .attr("cy", d => yLinearScale(d.price))
-    .attr("r", "15")
-    .attr("fill", "pink")
-    .attr("opacity", ".5");
+    .attr("r", "3")
+    .attr("fill", "blue")
+    .attr("opacity", ".1");
 
     // Step 6: Initialize tool tip
     // ==============================
