@@ -1,20 +1,41 @@
 var data = {};
 
-d3.csv("../../Cleaned/wine_data.csv").then(function (data) {
+d3.csv("wine_data.csv").then(function (data) {
     console.log(data[0]);
 
     var country = data.country;
     var description = data.description;
-    var point = data.points;
+    var points = data.points;
     var price = data.price;
     var variety = data.variety;
 
     console.log(data.variety);
-
-    updateIDList(subjectIDs);
-    var selectedID = d3.select("#selDataset");
+	
+    updateCountryList(country);
+    var selectedCountry = d3.select("#selDataset");
 
     document.getElementById("selDataset").addEventListener("change", runFilter);
+
+    updateDescriptionList(description);
+    var selectedDescription = d3.select("#selDataset");
+
+    document.getElementById("selDataset").addEventListener("change", runFilter);
+
+    updatePointList(points);
+    var selectedPoints = d3.select("#selDataset");
+
+    document.getElementById("selDataset").addEventListener("change", runFilter);
+
+    updatePriceList(price);
+    var selectedPrice = d3.select("#selDataset");
+
+    document.getElementById("selDataset").addEventListener("change", runFilter);
+   
+    updateVarietyList(variety);
+    var selectedVariety = d3.select("#selDataset");
+
+    document.getElementById("selDataset").addEventListener("change", runFilter);
+
     
     var theRow = {}
     function runFilter() {
@@ -128,12 +149,57 @@ function populateDemo(values) {
 }
 
 
-function updateIDList(subjectIDs) {
+function updateCountryList(country) {
     //d3.event.preventDefault();
     console.log(d3.select("#selDataset"));
     d3.select("#selDataset").selectAll("option").remove();
     d3.select('#ID').append("option").text("empty");
-    subjectIDs.forEach(function (id) {
+    country.forEach(function (id) {
+        var row = d3.select("#selDataset");
+        row.append("option").text(id);
+    })
+}
+
+
+function updateDescriptionList(description) {
+    //d3.event.preventDefault();
+    console.log(d3.select("#selDataset"));
+    d3.select("#selDataset").selectAll("option").remove();
+    d3.select('#ID').append("option").text("empty");
+    description.forEach(function (id) {
+        var row = d3.select("#selDataset");
+        row.append("option").text(id);
+    })
+}
+
+function updatePointList(points) {
+    //d3.event.preventDefault();
+    console.log(d3.select("#selDataset"));
+    d3.select("#selDataset").selectAll("option").remove();
+    d3.select('#ID').append("option").text("empty");
+    points.forEach(function (id) {
+        var row = d3.select("#selDataset");
+        row.append("option").text(id);
+    })
+}
+
+function updatePriceList(price) {
+    //d3.event.preventDefault();
+    console.log(d3.select("#selDataset"));
+    d3.select("#selDataset").selectAll("option").remove();
+    d3.select('#ID').append("option").text("empty");
+    price.forEach(function (id) {
+        var row = d3.select("#selDataset");
+        row.append("option").text(id);
+    })
+}
+
+function  updateVarietyList(variety) {
+    //d3.event.preventDefault();
+    console.log(d3.select("#selDataset"));
+    d3.select("#selDataset").selectAll("option").remove();
+    d3.select('#ID').append("option").text("empty");
+    variety.forEach(function (id) {
         var row = d3.select("#selDataset");
         row.append("option").text(id);
     })

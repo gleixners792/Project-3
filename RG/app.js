@@ -22,30 +22,23 @@ var chartGroup = svg.append("g")
 
 // Import Data
 d3.csv("wine_data.csv").then(function(wineData) {
-<<<<<<< HEAD
-
-=======
     // console.log(wineData)
->>>>>>> 96bfc32bc2a6a3012b3aad64603dc30af6d9dba9
     // Step 1: Parse Data/Cast as numbers
     // ==============================
     wineData.forEach(function(data) {
       data.points = +data.points;
       data.price = +data.price;
     });
-<<<<<<< HEAD
 
     // Step 2: Create scale functions
     // ==============================
     var xLinearScale = d3.scaleLinear()
       .domain([40, d3.max(wineData, d => d.points)])
-=======
    
     // Step 2: Create scale functions
     // ==============================
     var xLinearScale = d3.scaleLinear()
       .domain([85, d3.max(wineData, d => d.points)])
->>>>>>> 96bfc32bc2a6a3012b3aad64603dc30af6d9dba9
       .range([0, width]);
 
     var yLinearScale = d3.scaleLinear()
@@ -74,15 +67,12 @@ d3.csv("wine_data.csv").then(function(wineData) {
     .append("circle")
     .attr("cx", d => xLinearScale(d.points))
     .attr("cy", d => yLinearScale(d.price))
-<<<<<<< HEAD
     .attr("r", "15")
     .attr("fill", "pink")
-    .attr("opacity", ".5");
-=======
+    .attr("opacity", ".5")
     .attr("r", "3")
     .attr("fill", "blue")
     .attr("opacity", ".1");
->>>>>>> 96bfc32bc2a6a3012b3aad64603dc30af6d9dba9
 
     // Step 6: Initialize tool tip
     // ==============================
