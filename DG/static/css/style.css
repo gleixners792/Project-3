@@ -6,7 +6,7 @@ body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
-/*    background-color: #fff9ea;*/
+
 /*url("https://cdn.wallpapersafari.com/60/36/FTwhVE.jpg")*/
 /*    background-image: url("/static/images/wallpaper.jpg")*/
 }
@@ -36,6 +36,15 @@ body {
 	padding: 1em;
 	opacity: 0.7;
 	background-color: #333;
+}
+
+.jumbotron3 {
+	color: #FFF8DC;
+	margin-left: 100px;
+	margin-right: 100px;
+	padding: 1em;
+	opacity: 0.9;
+	background-color: #6F8294;
 }
 /* links colors */
 a{
@@ -99,7 +108,6 @@ a{
 	color: #f2f2f2;
 }
 
-
 .navbar-default .navbar-footer {
 	font: 20px Arial, Helvetica, sans-serif;
 }
@@ -108,8 +116,6 @@ a{
 	margin-right: 5px;
 }
 
-
-
 .footer {
 	position: fixed;
 	bottom: 0;
@@ -117,10 +123,10 @@ a{
 	color: #fff9ea;
 }
 
-/*#dropdown-row {*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*}*/
+#dropdown-row {
+    margin: 0;
+    padding: 0;
+}
 
 */ .leaflet-popup-content {
 	text-align: center;

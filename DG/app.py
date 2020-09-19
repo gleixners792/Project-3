@@ -76,11 +76,11 @@ def varieties_data(country):
 
 	df_variety_totals = df_only_country['variety'].value_counts(
 	).rename_axis("Variety").reset_index(name="Counts")
-	df_top10varieties = df_variety_totals[:10]
+	df_varieties = df_variety_totals[:10]
 
 	data = {
-		"variety": df_top10varieties.Variety.values.tolist(),
-		"count": df_top10varieties.Counts.values.tolist(),
+		"variety": df_varieties.Variety.values.tolist(),
+		"count": df_varieties.Counts.values.tolist(),
 	}
 
 	# print(data)
