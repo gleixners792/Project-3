@@ -16,7 +16,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 		id: 'mapbox/dark-v9',
 		tileSize: 512,
 		zoomOffset: -1,
-	accessToken: API_KEY
+	accessToken: "pk.eyJ1IjoiZGxnNDEwIiwiYSI6ImNrZWMybXdyZjAzd2kzMHM1ZnNtZWRvdGkifQ.TrPGm2yguZht6tKZpjBfcA"
 }).addTo(myMap);
 
 //var link = "static/data/worldmap.json";

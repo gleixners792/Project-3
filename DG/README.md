@@ -1,6 +1,4 @@
-PROJECT #2: VIsualize me, Captian!
----
-GROUP FOUR – HANNAH LEE, DIEGO GONZALEZ AND RICK GENTILE
+PROJECT #2 : VIsualize me, Captian!
 
 ---
 
@@ -16,6 +14,7 @@ Wine Review
 	
 	Visuals: Dashboard Page will allow the visitor to select a wine variety to compare the taste testers reviews, selection of provinces to determine the available wines and their ratings. [rgentile notes-additional categories can be discussed]
 
+----
 Project Summary
 
 Project Requirements: -- ETL and App Build --
@@ -26,28 +25,28 @@ Project Requirements: -- ETL and App Build --
 	
 	2.Using Jupyter Notebook, the incorporated process followed was:
 	
-		a.Imported the data from these CSVs into Dataframes using Pandas.
-			i.To create the the json library winemag-data-130k-v2.json. Also created the country.json for mapping purposes.
+		a. Imported the data from these CSVs into Dataframes using Pandas.
+			i. To create the the json library winemag-data-130k-v2.json. Also created the country.json for mapping purposes.
 		
 	3.Built the app with flask, connecting our sqlite file to the database and creating routes for the different visualizations.
 	
-		b.Dashboard Page with Multiple Charts that Update from the same data
+		a. Dashboard Page with Multiple Charts that Update from the same data
 	
-			i.Home Page with World Map Detailing country-by-country wine count.
+			i. Home Page with World Map Detailing country-by-country wine count.
 	
-			ii.Links to additional page
+			ii. Links to additional page
 		
-		c.Additional Page With Visual Presentation
+		b. Additional Page With Visual Presentation
 	
-			i.Pie Chart Showing Wine Variety by country
+			i. Pie Chart Showing Wine Variety by country
 	
-			ii.Bar Chart showing number of wines per country
+			ii. Bar Chart showing number of wines per country
 	
-			iii.Bubble Chart showing Price and Wine Point Ranking for each wine
+			iii. Bubble Chart showing Price and Wine Point Ranking for each wine
 	
 	4.Our Visualization are meant to present the wine enthusiast easily readable data to allow them multiple formats for learning about outstanding wines across the world. The interactive methodology we have utilized will provide the user a place to refer back to every time they want to research a high quality wine.
 
-
+----
 Data Sources
 
 Wine Review Dataset- 130k wine reviews with variety, location, winery, price, and description
@@ -56,4 +55,5 @@ https://www.kaggle.com/zynicide/wine-reviews
 Country Boundaries GeoJSON
 https://github.com/johan/world.geo.json
 
-
+---
+GROUP 3 – DIEGO GONZALEZ, RICK GENTILE & HANNAH LEE
