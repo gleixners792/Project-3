@@ -1,15 +1,4 @@
 body {
-<<<<<<< HEAD
-  padding: 0;
-  margin: 0;
-}
-
-#map,
-body,
-html {
-  height: 100%;
-}
-=======
 	padding: 0;
 	margin: 0;
 	background-color: #fff9ea;
@@ -17,9 +6,7 @@ html {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
-
-/*url("https://cdn.wallpapersafari.com/60/36/FTwhVE.jpg")*/
-/*    background-image: url("/static/images/wallpaper.jpg")*/
+/*    background-color: #fff9ea;*/
 }
 
 .jumbotron {
@@ -226,7 +213,6 @@ h1 {
 #loading-image {
 	z-index: 100;
 }
-<<<<<<< HEAD
 
 #wines {
 	border-radius: 8px;
@@ -241,7 +227,7 @@ h1 {
 	width: 400px;
 	height: 300px;
 	content: " ";
-/*	background-image: url("High_contrast_wine_glasses.jpeg");*/
+	background-image: url("High_contrast_wine_glasses.jpeg");
 	background-repeat: no-repeat;
 	background-position: 50% 0;
 	background-size: cover;
@@ -288,6 +274,3 @@ h1 {
 	fill: #e75480;
 	cursor: pointer;
 }
-=======
->>>>>>> 96bfc32bc2a6a3012b3aad64603dc30af6d9dba9
->>>>>>> d5ca9207209660280b0a94f59bbfb011a5518c5f

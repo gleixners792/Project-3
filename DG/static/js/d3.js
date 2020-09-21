@@ -10,8 +10,10 @@ let width = svgWidth - margin.left - margin.right;
 let height = svgHeight - margin.top - margin.bottom;
 
 // function used for updating y-scale const upon click on axis label
+
 function yScale(timeData, chosenYAxis) {
 	// create scales
+
 	const yLinearScale = d3.scaleLinear()
 		.domain([d3.min(timeData, d => d[chosenYAxis]) * .72,
 			d3.max(timeData, d => d[chosenYAxis])
@@ -22,6 +24,7 @@ function yScale(timeData, chosenYAxis) {
 }
 
 // function used for updating yAxis const upon click on axis label
+
 function renderYAxis(newYScale, yAxis) {
 	const leftAxis = d3.axisLeft(newYScale);
 
@@ -34,6 +37,7 @@ function renderYAxis(newYScale, yAxis) {
 
 // function used for updating circles group with a transition to
 // new circles
+
 function renderCircles(circlesGroup, newYScale, chosenYAxis) {
 	circlesGroup.transition()
 		.duration(1000)
@@ -41,6 +45,7 @@ function renderCircles(circlesGroup, newYScale, chosenYAxis) {
 	return circlesGroup;
 }
 // function used for updating country text (textGroup)  with a transition to new text
+
 function renderYLabels(labelsYGroup, newYScale, chosenYAxis) {
 	labelsYGroup.transition()
 		.duration(1000)
@@ -48,14 +53,19 @@ function renderYLabels(labelsYGroup, newYScale, chosenYAxis) {
 	return labelsYGroup;
 }
 // function used for updating circles group with new tooltip
+
 function updateToolTip(chosenYAxis, circlesGroup) {
 	// let label = [timeData.country] + "Vintage Year";
+
 	let ylabel = "";
+
 	// Updating circles group along y-axis
+
 	if (chosenYAxis === "points") {
 		ylabel = "Wine Ratings (Points):";
 	}
 	// else if (chosenYAxis === "price") {
+
 	else {
 		ylabel = "Wine Price ($):";
 	}
@@ -69,11 +79,13 @@ function updateToolTip(chosenYAxis, circlesGroup) {
 	circlesGroup.call(toolTip)
 
 	// on mouse event
+
 	circlesGroup.on("mouseover", function (data) {
 			toolTip.show(data, this)
 		})
 
 		// on mouse out event
+
 		.on("mouseout", function (data) {
 			toolTip.hide(data, this)
 		})
@@ -84,12 +96,15 @@ function updateToolTip(chosenYAxis, circlesGroup) {
 // var g_sync
 
 // Retrieve data from route
+
 async function buildD3(country) {
+	
 	// Create an SVG wrapper, append an SVG group that will hold our chart,
 	// and shift the latter by left and top margins.
 	let timeData = await d3.json(`/time/${country}`)
 
 	//parse data
+	
 	timeData.forEach(function (data) {
 		data.year = +data.year
 		data.points = +data.points
@@ -112,39 +127,48 @@ async function buildD3(country) {
 	// .classed("d3-svg", true)
 
 	// Append an SVG group
+	
 	let chartGroup = svg
 		.append("g")
 		.attr("transform", `translate(${margin.left}, ${margin.top})`)
 		.classed("d3-svg", true)
+	
 	// Initial Params
+	
 	let chosenYAxis = "price";
 
 	// xLinearScale function above csv import
+	
 	let xLinearScale = d3.scaleLinear()
 		.domain([d3.min(timeData, d => d.year) * 0.999,
 			d3.max(timeData, d => d.year) * 1.001
 		])
 		.range([0, width])
+	
 	// yLinearScale function above csv import
 
 	let yLinearScale = yScale(timeData, chosenYAxis);
 
 	// Create initial axis functions
+	
 	let bottomAxis = d3.axisBottom(xLinearScale).tickFormat(d3.format("d"));
 	let leftAxis = d3.axisLeft(yLinearScale);
 
 	// append x axis
+	
 	let xAxis = chartGroup.append("g")
 		.classed("x-axis", true)
 		.attr("transform", `translate(0, ${height})`)
 		.call(bottomAxis);
 
 	// append y axis
+	
 	let yAxis = chartGroup.append("g")
 		.classed("y-axis", true)
 		.call(leftAxis);
 
 	// append initial circles
+	
 	let circlesGroup = chartGroup.selectAll("circle")
 		.data(timeData)
 		.enter()
@@ -158,6 +182,7 @@ async function buildD3(country) {
 		.attr("opacity", ".85")
 
 	// Create group for  2 y- axis labels
+	
 	let labelsYGroup = chartGroup.append("g")
 		.attr("transform", "rotate(-90)");
 
@@ -178,6 +203,7 @@ async function buildD3(country) {
 		.text("Avg Wine Prices ($)");
 
 	// append x axis label
+	
 	chartGroup.append("text")
 		.data(timeData)
 		.attr("transform", `translate(${width / 2}, ${height + 20})`)
@@ -188,26 +214,35 @@ async function buildD3(country) {
 		.text("Vintage ")
 
 	// // updateToolTip function above
+	
 	circlesGroup = updateToolTip(chosenYAxis, circlesGroup);
 
 	// y axis labels event listener
+	
 	labelsYGroup.selectAll("text")
 		.on("click", function () {
+	
 			// get value of selection
 			let value = d3.select(this).attr("value");
 			if (value !== chosenYAxis) {
+	
 				// replaces chosenYAxis with value
 				chosenYAxis = value;
 				console.log(chosenYAxis)
+	
 				// functions here found above csv import
 				// updates y scale for new data
 				yLinearScale = yScale(timeData, chosenYAxis);
+	
 				// updates y axis with transition
 				yAxis = renderYAxis(yLinearScale, yAxis);
+	
 				// updates circles with new y values
 				circlesGroup = renderCircles(circlesGroup, yLinearScale, chosenYAxis);
+	
 				// updates tooltips with new info
 				circlesGroup = updateToolTip(chosenYAxis, circlesGroup);
+	
 				// changes classes to change bold text
 				if (chosenYAxis === "points") {
 					pointsLabel

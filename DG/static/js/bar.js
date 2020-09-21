@@ -1,6 +1,7 @@
 async function buildBar(country) {
 
 	//using d3.json to fetch the country data for the plot
+	
 	let varietyURL = await d3.json(`/varieties/${country}`);
 
 	const variety = varietyURL.variety
@@ -10,13 +11,6 @@ async function buildBar(country) {
 	//console.log(variety)
 	//console.log(itemsReturned)
 	//console.log(variety[0])
-
-	//build a color array to put in color for varieties that we want
-	//to be a certain color in our chart
-	//Top10 value counts in world:  
-	//Pinot Noir, Cabernet Sauvignon, Chardonnay, Syrah, Red Blend,
-	//Zinfandel, MErlot, Sauvignon Blanc, Bordeaux-style Red Blend, Riesling
-	//anthing else will be a medium blue/green
 
 	var count = 0;
 	colorArray = []
@@ -34,9 +28,11 @@ async function buildBar(country) {
 			colorPinotNoir = 'rgba(120,13,48,0.8)'
 			colorArray.push(colorPinotNoir)
 		} else {
+
 			//put any non matching colors here
 			//colorBasecolor = 'rgba(204,204,204,1)'
-			colorBasecolor = 'rgba(0,103,120,1)' //jacksonville jag teal
+
+			colorBasecolor = 'rgba(0,103,120,1)'
 			colorArray.push(colorBasecolor)
 		}
 
@@ -61,7 +57,7 @@ async function buildBar(country) {
 			b: 90
 		},
 		showlegend: true,
-		title: "Top Varieties per country",
+		title: "Top Varieties",
 		paper_bgcolor: 'rgba(0, 0, 0, 0)', //  transparent backgroung
 		plot_bgcolor: 'rgba(0, 0, 0, 0)',
 		yaxis: {
@@ -74,5 +70,3 @@ async function buildBar(country) {
 
 	Plotly.newPlot("bar", varietyData, layout);
 }
-
-
