@@ -54,7 +54,7 @@ Wine Review
   * https://github.com/johan/world.geo.json
 
 
-## GROUP 3 – DIEGO GONZALEZ, RICK GENTILE & HANNAH LEE ##
+## GROUP 3 – Diego Gonzalez, Rick Gentile & Hannah Lee ##
 
 * Diego Gonzalez - [@dlg410](https://github.com/dlg410)
 * Richard Gentile - [@rgentile21](https://github.com/rgentile21)
