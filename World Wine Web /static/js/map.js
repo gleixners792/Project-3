@@ -12,14 +12,14 @@ var myMap = L.map("mapPlot", {
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 		maxZoom: 18,
-		noWrap: false,
+		// noWrap: false,
 		id: 'mapbox/dark-v9',
 		tileSize: 512,
 		zoomOffset: -1,
-	accessToken: "pk.eyJ1IjoiZGxnNDEwIiwiYSI6ImNrZWMybXdyZjAzd2kzMHM1ZnNtZWRvdGkifQ.TrPGm2yguZht6tKZpjBfcA"
+	accessToken: API_KEY
 }).addTo(myMap);
 
-//var link = "static/data/worldmap.json";
+var link = "static/data/worldmap.json";
 
 (async function buildMap() {
 	// Link to GeoJSON
