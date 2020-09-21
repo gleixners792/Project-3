@@ -74,3 +74,5 @@ async function buildBar(country) {
 
 	Plotly.newPlot("bar", varietyData, layout);
 }
+
+
